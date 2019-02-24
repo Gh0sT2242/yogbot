@@ -22,10 +22,10 @@ class DiscordCommandTicket extends DiscordCommand {
       var request = "?ticket=1&action=list";
       byondConnector.request(request, (results) => {
         if ('error' in results) {
-          message.channel.send(results.error);
+          message.channel.send("results.error");
         }
         else {
-          message.channel.send(results.data);
+          message.channel.send("results.data");
         }
       });
 
@@ -46,10 +46,10 @@ class DiscordCommandTicket extends DiscordCommand {
       var request = "?ticket=1&action=log&id=" + ticketID;
       byondConnector.request(request, (results) => {
         if ('error' in results) {
-          message.channel.send(results.error);
+          message.channel.send("results.error");
         }
         else {
-          message.channel.send(results.data, {split: true});
+          message.channel.send("results.data", {split: true});
         }
       });
 
@@ -76,7 +76,7 @@ class DiscordCommandTicket extends DiscordCommand {
       var request = "?ticket=1&action=reply&id=" + ticketID + "&admin=" + message.author.username + "&response=" + ticketResponse;
       byondConnector.request(request, (results) => {
         if ('error' in results) {
-          message.channel.send(results.error);
+          message.channel.send("results.error");
         }
         else {
           message.reply("Replied to ticket #" + ticketID);
